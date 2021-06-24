@@ -1,0 +1,290 @@
+/* Root of document (<html>) Custom properties*/
+
+:root {
+    --primary      : #9C27B0;
+    --darkPrimary  : #89119D;
+    --darkSecundary: rgb(233, 187, 2);
+    --secundary    : #FFCE00;
+    --white        : #FFF;
+    --dark         : #000;
+    --main-font    : 'Staatliches', cursive;
+}
+
+html {
+    /** Border Box **/
+    box-sizing: border-box;
+    font-size : 62.5%;
+}
+
+/* Border Box */
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/** Globals **/
+body {
+    background-color: var(--primary);
+    font-size       : 1.6rem;
+    line-height     : 1.5;
+}
+
+p {
+    font-size  : 1.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color      : var(--white);
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+}
+
+h1,
+h2,
+h3 {
+    text-align : center;
+    color      : var(--secundary);
+    font-family: var(--main-font);
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3.2rem;
+}
+
+h3 {
+    font-size: 2.4rem;
+}
+
+.container {
+    max-width: 120rem;
+    margin   : 0 auto;
+}
+
+/** Header **/
+
+.header {
+    display        : flex;
+    justify-content: center;
+}
+
+.header__logo {
+    margin: 3rem 0;
+}
+
+/** Navegation **/
+
+.navegation {
+    background-color  : var(--darkPrimary);
+    padding           : 1rem 0;
+    display           : flex;
+    justify-content   : center;
+    /*gap             : 2rem;  new form*/
+}
+
+.navegation__link {
+    font-family : var(--main-font);
+    color       : var(--white);
+    font-size   : 3rem;
+    margin-right: 2rem;
+}
+
+.navegation__link:last-of-type {
+    margin-right: 0;
+}
+
+.navegation__link:hover,
+.navegation__link--active {
+    color: var(--secundary);
+}
+
+/* Footer */
+
+.footer {
+    background-color: var(--darkPrimary);
+    color           : var(--white);
+    margin-top      : 2rem;
+    padding         : 1rem 0;
+    width           : 100%;
+}
+
+.footer__text {
+    text-align : center;
+    font-family: var(--main-font);
+    font-size  : 2.2rem;
+}
+
+/** Grid **/
+
+.grid {
+    display              : grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap           : 2rem;
+    row-gap              : 2rem;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Products */
+
+.product {
+    background-color: var(--darkPrimary);
+    padding         : 1rem;
+}
+
+.product__name {
+    font-size: 4rem;
+}
+
+.product__price {
+    font-size: 2.8rem;
+    color    : var(--secundary)
+}
+
+.product__name,
+.product__price {
+    font-family: var(--main-font);
+    margin     : 1rem 0;
+    text-align : center;
+    line-height: 1.2;
+}
+
+/* Grafics */
+
+.grafic {
+    min-height       : 30rem;
+    background-repeat: no-repeat;
+    background-size  : cover;
+    grid-column      : 1 / 3;
+}
+
+.grafic--shirts {
+    grid-row        : 2 / 3;
+    background-image: url(../img/grafico1.jpg);
+}
+
+.grafic--node {
+    grid-row        : 8 / 9;
+    background-image: url(../img/grafico2.jpg);
+
+}
+
+@media (min-width: 768px) {
+    .grafic--node {
+        grid-row   : 5 / 6;
+        grid-column: 2 / 4;
+    }
+}
+
+/** About Us Section **/
+.about {
+    display           : grid;
+    grid-template-rows: repeat(2, auto);
+}
+
+@media (min-width: 768px) {
+    .about {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap           : 2rem;
+    }
+}
+
+.about__text {
+    padding: 1rem;
+}
+
+.about__image {
+    grid-row: 1 / 2;
+}
+
+@media (min-width: 768px) {
+    .about__image {
+        grid-column: 2 / 3;
+    }
+}
+
+/** About Us - Icons **/
+.icons {
+    display              : grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap                  : 2rem;
+}
+
+@media (min-width: 768px) {
+    .icons {
+        display              : grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+
+.icon {
+    margin: 0 auto;
+}
+
+.icon__image {
+    display        : flex;
+    justify-content: center;
+}
+
+.icon__text {
+    text-align: center;
+}
+
+/** Product Page **/
+
+@media (min-width: 768px) {
+    .shirt {
+        display              : grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap                  : 2rem;
+    }
+}
+
+.form {
+    display              : grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap                  : 2rem;
+}
+
+.form__field {
+    border-color    : var(--darkPrimary);
+    border-width    : 1rem;
+    border-style    : solid;
+    border          : 2 bold;
+    padding         : 1rem;
+    background-color: var(--darkPrimary);
+    color           : var(--white);
+    text-align      : center;
+    margin          : 1rem;
+    font-family     : var(--main-font);
+    font-size       : 2rem;
+}
+
+.form__submit {
+    background-color: var(--secundary);
+    border          : none;
+    font-size       : 2rem;
+    font-family     : var(--main-font);
+    padding         : 2rem;
+    transition      : background-color .3s ease;
+    max-width       : 100%;
+    grid-column     : 1 / 3;
+}
+
+.form__submit:hover {
+    cursor          : pointer;
+    background-color: var(--darkSecundary);
+}
